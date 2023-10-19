@@ -1,4 +1,4 @@
-import { UDPClient } from './UDPClient.mjs';
+import UDPClient from './UDPClient.mjs';
 
 const port = 4703;
 const ip = "";
