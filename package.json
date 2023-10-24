@@ -6,8 +6,11 @@
   "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "run":  "node server.mjs"
+    "run": "node server.mjs"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "midi": "^2.0.0"
+  }
 }
