@@ -14,8 +14,8 @@ const avail_ports_count = input.getPortCount();
 console.log(avail_ports_count);
 
 //itterate through available ports and log names
-for(let i = 0; i <= avail_ports_count; i++){
-	console.log(i, input.getPortName);
+for(let i = 0; i < avail_ports_count; i++){
+	console.log(i, input.getPortName(i));
 }
 
 //callback
