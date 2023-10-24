@@ -4,8 +4,9 @@ import midi from 'midi';
 const etc_port = 4703;
 const ip = "";
 const midi_port_name = "U2MIDI Pro";
+const midi_channel = 159 // ch.16
 
-const etc = new UDPClient("172.22.0.59", etc_port);
+const etc = new UDPClient("192.168.40.101", etc_port);
 
 //set up midi input
 const input = new midi.Input();
@@ -13,26 +14,20 @@ const input = new midi.Input();
 //get midi port index that matches name
 const index = getMidiPortIndex(midi_port_name);
 console.log(index);
-if(index == -1){ console.log("midi port not found"); return -1};
-
-
-
+if(index == -1){ console.log("midi port not found"); process.exit();};
 
 //callback
 input.on('message', (deltaTime, message) => {
 	console.log(`msg: ${message} delta: ${deltaTime}`);
+	if(message[0] == midi_channel && message[2] == 127){
+		console.log("relaying to ETC");
+		etc.send(`E$pst act: 1,${message[1]}, 0\r`);
+	}
 });
 
 
-//open port if available
-
-//
-
-
-
-
-
-
+//open
+input.openPort(index);
 
 //const message = 'E$pst act: 1, 1, 0\r';
 

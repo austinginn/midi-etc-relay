@@ -7,7 +7,7 @@ class UDPClient {
         this.client = dgram.createSocket('udp4');
     }
 
-    sendMessage(message) {
+    send(message) {
         const buffer = Buffer.from(message);
         this.client.send(buffer, 0, buffer.length, this.port, this.ip, (err) => {
             if (err) {
