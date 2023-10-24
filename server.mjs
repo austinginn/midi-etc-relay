@@ -3,20 +3,20 @@ import midi from 'midi';
 
 const etc_port = 4703;
 const ip = "";
+const midi_port_name = "U2MIDI Pro";
 
 const etc = new UDPClient("172.22.0.59", etc_port);
 
 //set up midi input
 const input = new midi.Input();
 
-//log total available input ports
-const avail_ports_count = input.getPortCount();
-console.log(avail_ports_count);
+//get midi port index that matches name
+const index = getMidiPortIndex(midi_port_name);
+console.log(index);
+if(index == -1){ console.log("midi port not found"); return -1};
 
-//itterate through available ports and log names
-for(let i = 0; i < avail_ports_count; i++){
-	console.log(i, input.getPortName(i));
-}
+
+
 
 //callback
 input.on('message', (deltaTime, message) => {
@@ -37,3 +37,15 @@ input.on('message', (deltaTime, message) => {
 //const message = 'E$pst act: 1, 1, 0\r';
 
 //etc.send(message);
+
+
+//get midi port index
+function getMidiPortIndex(name){
+	const avail_ports_count = input.getPortCount();
+	for(let i = 0; i < avail_ports_count; i++){
+		if(input.getPortName(i).includes(name)){
+			return i;
+		}
+	}
+	return -1;
+}
