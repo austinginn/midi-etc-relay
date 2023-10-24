@@ -21,7 +21,7 @@ for(let i = 0; i <= avail_ports_count; i++){
 //callback
 input.on('message', (deltaTime, message) => {
 	console.log(`msg: ${message} delta: ${deltaTime}`);
-)};
+});
 
 
 //open port if available
