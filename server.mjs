@@ -19,6 +19,18 @@ const midi_port_name = config.midi_port_name;
 const trans_midi_channel = 158; // ch.15 - see above for use cases
 const push_midi_channel = 159; // ch.16 - see above for use cases
 
+//wait and message buffer counter to prevent midi spam
+const wait_timeout = 100;
+let wait = true;
+let msg_buffer_count = 0;
+
+setTimeout(() => {
+	wait = false;
+	if(msg_buffer_count > 0) {
+		console.log(`Cleared ${msg_buffer_count} messages from buffer`);
+	}
+}, wait_timeout);
+
 //set up midi input
 const input = new midi.Input();
 
@@ -38,6 +50,11 @@ if (index == -1) {
 
 //callback for midi input
 input.on('message', (deltaTime, message) => {
+	//wait for buffer to clear
+	if(wait) {
+		msg_buffer_count++;
+		return;
+	}
 	console.log(`msg: ${message} delta: ${deltaTime}`);
 
 	//midi channel with support for fade up and down times
