@@ -73,6 +73,7 @@ process.on('unhandledRejection', (reason, promise) => {
 
 //get midi port index
 function getMidiPortIndex(name) {
+	if(name == "") { return -1; }
 	const avail_ports_count = input.getPortCount();
 	for (let i = 0; i < avail_ports_count; i++) {
 		if (input.getPortName(i).includes(name)) {
