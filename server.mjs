@@ -26,10 +26,12 @@ const input = new midi.Input();
 const index = getMidiPortIndex(midi_port_name);
 if (index == -1) {
 	console.log("midi port not found. List of available midi ports: ");
+	console.log("*****************");
 	const avail_ports_count = input.getPortCount();
 	for (let i = 0; i < avail_ports_count; i++) {
 		console.log(input.getPortName(i));
 	}
+	console.log("*****************");
 	console.log("set midi_port_name in config.json to the correct port name listed above");
 	process.exit();
 };
