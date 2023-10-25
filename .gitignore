@@ -98,3 +98,6 @@ typings/
 # Common build output directories
 out/
 bin/
+
+# config file
+config.json

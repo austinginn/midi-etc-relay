@@ -19,7 +19,7 @@ const midi_port_name = config.midi_port_name;
 const trans_midi_channel = 158; // ch.15 - see above for use cases
 const push_midi_channel = 159; // ch.16 - see above for use cases
 
-//wait and message buffer counter to prevent midi spam
+//wait and message buffer counter to prevent midi spam on startup
 const wait_timeout = 100;
 let wait = true;
 let msg_buffer_count = 0;
