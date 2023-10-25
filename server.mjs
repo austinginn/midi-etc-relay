@@ -25,8 +25,8 @@ const input = new midi.Input();
 //get midi port index that matches name
 const index = getMidiPortIndex(midi_port_name);
 if (index == -1) {
-	console.log("*****************");
 	console.log("Midi port not found. List of available midi ports: ");
+	console.log("*****************");
 	const avail_ports_count = input.getPortCount();
 	for (let i = 0; i < avail_ports_count; i++) {
 		console.log(input.getPortName(i));
@@ -92,9 +92,8 @@ async function loadConfig() {
 		console.log("Error loading config file. Creating default config.json file.");
 
 		//print available midi ports
-		console.log("*****************");
 		console.log("Available midi ports:");
-	
+		console.log("*****************");
 		const input = new midi.Input();
 		const avail_ports_count = input.getPortCount();
 		for (let i = 0; i < avail_ports_count; i++) {
