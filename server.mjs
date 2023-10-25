@@ -85,9 +85,10 @@ function getMidiPortIndex(name) {
 //load config file
 async function loadConfig() {
 	try {
-		const config = await configFileHandler.readJSON();
+		const data = await configFileHandler.readJSON();
 		console.log("Config loaded: ");
-		console.log(config);
+		console.log(data);
+		return data;
 	} catch (error) {
 		console.log("Error loading config file. Creating default config.json file.");
 
