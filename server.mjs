@@ -25,14 +25,14 @@ const input = new midi.Input();
 //get midi port index that matches name
 const index = getMidiPortIndex(midi_port_name);
 if (index == -1) {
-	console.log("midi port not found. List of available midi ports: ");
 	console.log("*****************");
+	console.log("Midi port not found. List of available midi ports: ");
 	const avail_ports_count = input.getPortCount();
 	for (let i = 0; i < avail_ports_count; i++) {
 		console.log(input.getPortName(i));
 	}
 	console.log("*****************");
-	console.log("set midi_port_name in config.json to the correct port name listed above");
+	console.log("Set midi_port_name in config.json to the correct port name listed above");
 	process.exit();
 };
 
@@ -86,19 +86,22 @@ function getMidiPortIndex(name) {
 async function loadConfig() {
 	try {
 		const config = await configFileHandler.readJSON();
-		console.log("config loaded: ");
+		console.log("Config loaded: ");
 		console.log(config);
 	} catch (error) {
-		console.log("error loading config file... generating one now");
+		console.log("Error loading config file. Creating default config.json file.");
 
 		//print available midi ports
-		console.log("available midi ports:");
+		console.log("*****************");
+		console.log("Available midi ports:");
+	
 		const input = new midi.Input();
 		const avail_ports_count = input.getPortCount();
 		for (let i = 0; i < avail_ports_count; i++) {
 			console.log(input.getPortName(i));
 		}
-		console.log("set midi_port_name in config.json to the correct port name listed above");
+		console.log("*****************");
+		console.log("Set midi_port_name in config.json to the correct port name listed above");
 
 		//create config file
 		const config = {
@@ -109,9 +112,9 @@ async function loadConfig() {
 
 		//save config file
 		await configFileHandler.saveJSON(config);
-		console.log("config.json file created with default values:");
+		console.log("Config.json file created with default values:");
 		console.log(config);
-		console.log("edit config.json with correct values for your environment and restart server");
+		console.log("Edit config.json with correct values for your environment and restart server");
 		process.exit();
 	}
 }
