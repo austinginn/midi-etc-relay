@@ -10,6 +10,7 @@ Midi-etc-relay is a utility built in nodejs to allow midi control of ETC Echotou
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
+- [Contact](#contact)
 
 ## Prerequisites
 
@@ -104,4 +105,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 MIT License
 
 ## Contact
-Hey! My name is Austin.  I specialize in creating custom A/V/L Integration solutions. If you're interseted in collaborating you can reach me at [austinleeginn@gmail.com](mailto:austinleeginn@gmail.com).
+Hey! My name is Austin.  I specialize in creating custom AVL Integration solutions. If you're interseted in collaborating you can reach me at [austinleeginn@gmail.com](mailto:austinleeginn@gmail.com).
