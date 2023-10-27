@@ -1,12 +1,14 @@
 {
-  "name": "etc-udp-control",
+  "name": "midi-etc-relay",
   "type": "module",
   "version": "1.0.0",
   "description": "etc echo touch mk2 UDP controller",
   "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "run": "node server.mjs"
+    "midi": "node midi-helper.mjs",
+    "run": "node server.mjs",
+    "deploy": "pm2 start server.mjs"
   },
   "author": "",
   "license": "ISC",
