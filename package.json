@@ -2,16 +2,16 @@
   "name": "midi-etc-relay",
   "type": "module",
   "version": "1.0.0",
-  "description": "etc echo touch mk2 UDP controller",
-  "main": "index.mjs",
+  "description": "midi to etc echotouch mk2 UDP relay",
+  "main": "server.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "midi": "node midi-helper.mjs",
     "run": "node server.mjs",
     "deploy": "pm2 start server.mjs"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Austin Ginn",
+  "license": "MIT",
   "dependencies": {
     "midi": "^2.0.0"
   }
