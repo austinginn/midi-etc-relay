@@ -1,3 +1,5 @@
+//JSON FILE HANDLER | AUSTIN GINN 2023
+//json file handler class for reading and writing JSON data to a file
 import fs from 'fs';
 
 class JSONFileHandler {

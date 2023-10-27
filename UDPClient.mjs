@@ -1,3 +1,5 @@
+//UDP MESSAGE SEND | AUSTIN GINN 2023
+//simple class to create udp socket and send messages
 import dgram from 'dgram';
 
 class UDPClient {

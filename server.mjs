@@ -1,6 +1,7 @@
+//MIDI-ETC-RELAY | AUSTIN GINN 2023
 import UDPClient from './UDPClient.mjs';
 import JSONFileHandler from './json-file-handler.mjs';
-import midi from 'midi';
+import midi from 'midi'; //see platform specific requirements
 
 //Init file handler and load config
 const configFileHandler = new JSONFileHandler('./config.json');

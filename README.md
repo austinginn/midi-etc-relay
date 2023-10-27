@@ -8,7 +8,6 @@ Midi-etc-relay is a utility built in nodejs to allow midi control of ETC Echotou
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
-- [API Endpoints](#api-endpoints)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -65,7 +64,7 @@ Before you can use this application, make sure you have the following prerequisi
 npm run
 ```
 ### MIDI Messages
-The relay opperates on two midi channels: 15 & 16
+The relay opperates on two midi channels: 15 & 16.  Learn more about the midi protocol here: [MIDI Essentials](https://ccrma.stanford.edu/~craig/articles/linuxmidi/misc/essenmidi.html)
 
 #### MIDI Channel 15:
 This channel is used for recalling presets on the Echotouch with specific fade times.  For example, to recall preset 1 on the Echotouch, with a 10 second fade, the corresponding midi message would be:
@@ -88,4 +87,21 @@ NOTE #2
 VELOCITY 127
 ```
 Any velocity value > 0 will work on channel 16
- 
+
+## Contributing
+If you'd like to contribute to this project, please follow these guidelines:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your changes to your fork.
+5. Create a pull request, describing your changes in detail.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+MIT License
+
+## Contact
+Hey! My name is Austin.  I specialize in creating custom A/V/L Integration solutions. If you're interseted in collaborating you can reach me at [austinleeginn@gmail.com](mailto:austinleeginn@gmail.com).

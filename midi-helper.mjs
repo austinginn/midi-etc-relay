@@ -1,3 +1,4 @@
+//MIDI-HELPER | AUSTIN GINN 2023
 //prints available midi ports
 import midi from 'midi';
 
