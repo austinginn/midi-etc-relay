@@ -14,7 +14,7 @@ Midi-etc-relay is a utility built in nodejs to allow midi control of ETC Echotou
 
 ## Prerequisites
 
-Before you can use this application, make sure you have the following prerequisites installed:
+Make sure you have the following prerequisites installed:
 
 - **Node.js:** See - [nodejs.org](https://nodejs.org/) for installation instructions.
 - **Platform Specific Instructions:** This utility uses node-midi which has platform specific requirements.  See the [node-midi repo](https://github.com/justinlatimer/node-midi) for more information.
